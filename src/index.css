@@ -4,6 +4,9 @@
 
 @layer base {
   .section {
-    @apply min-h-[800px];
+    @apply min-h-[1200px];
+  }
+  .active {
+    @apply bg-black text-white;
   }
 }

@@ -5,7 +5,13 @@ const Header = () => {
     <header className='bg-pink-200 fixed w-full h-[80px]'>
       <div className='container mx-auto flex items-center h-full'>
         <nav className='flex space-x-12'>
-          <Link href='#' to='hero' spy={true} smooth={true}>
+          <Link
+            href='#'
+            to='hero'
+            spy={true}
+            smooth={true}
+            activeClass='active'
+          >
             Home
           </Link>
           <Link href='#' to='about' spy={true} smooth={true}>
