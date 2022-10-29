@@ -4,9 +4,6 @@
 
 @layer base {
   .section {
-    @apply h-screen py-[180px];
-  }
-  .active {
-    @apply bg-black text-white;
+    @apply h-screen w-screen  py-[180px];
   }
 }

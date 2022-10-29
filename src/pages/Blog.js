@@ -1,10 +1,17 @@
 import React from 'react';
+// import motion
+import { motion } from 'framer-motion';
 
 const Blog = () => {
   return (
-    <section className='section' id='blog'>
+    <motion.section
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className='section'
+    >
       <div className='container mx-auto'>blog</div>
-    </section>
+    </motion.section>
   );
 };
 

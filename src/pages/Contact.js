@@ -1,10 +1,17 @@
 import React from 'react';
+// import motion
+import { motion } from 'framer-motion';
 
 const Contact = () => {
   return (
-    <section className='section bg-slate-500' id='contact'>
+    <motion.section
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className='section'
+    >
       <div className='container mx-auto'>contact</div>
-    </section>
+    </motion.section>
   );
 };
 
