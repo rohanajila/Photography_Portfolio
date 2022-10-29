@@ -6,19 +6,20 @@ import About from './components/About';
 import Portfolio from './components/Portfolio';
 import Blog from './components/Blog';
 import Contact from './components/Contact';
-import Footer from './components/Footer';
-
+// import router
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 const App = () => {
   return (
-    <div>
+    <Router>
       <Header />
-      <Hero />
-      <About />
-      <Portfolio />
-      <Blog />
-      <Contact />
-      <Footer />
-    </div>
+      <Routes>
+        <Route path='/' element={<Hero />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/portfolio' element={<Portfolio />} />
+        <Route path='/blog' element={<Blog />} />
+        <Route path='/contact' element={<Contact />} />
+      </Routes>
+    </Router>
   );
 };
 
