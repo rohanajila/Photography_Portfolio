@@ -1,13 +1,10 @@
 import React from 'react';
+// import image
 import WomanImg from '../img/home/woman.png';
 // import motion
 import { motion } from 'framer-motion';
-
-const transition = {
-  duration: 2,
-  ease: [0.6, 0.01, -0.05, 0.9],
-  // ease: [0.43, 0.13, 0.23, 0.96],
-};
+// import transition
+import { transition } from '../variants';
 
 const Home = () => {
   return (
