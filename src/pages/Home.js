@@ -4,8 +4,9 @@ import WomanImg from '../img/home/woman.png';
 import { motion } from 'framer-motion';
 
 const transition = {
-  duration: 0.6,
+  duration: 2,
   ease: [0.6, 0.01, -0.05, 0.9],
+  // ease: [0.43, 0.13, 0.23, 0.96],
 };
 
 const Home = () => {
@@ -14,16 +15,30 @@ const Home = () => {
       <div className='container mx-auto'>
         <div className='flex'>
           {/* text */}
-          <div className=''>text</div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={transition}
+            exit={{ opacity: 0 }}
+            className='text-[48px]'
+          >
+            text
+          </motion.div>
           {/* image */}
-          <div className='max-w-[560px] flex-1 overflow-hidden'>
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            exit={{ scale: 0 }}
+            transition={transition}
+            className='max-w-[560px] flex-1 overflow-hidden'
+          >
             <motion.img
               whileHover={{ scale: 1.1 }}
               transition={transition}
               src={WomanImg}
               alt=''
             />
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

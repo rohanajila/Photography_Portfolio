@@ -15,8 +15,8 @@ import { AnimatePresence } from 'framer-motion';
 const App = () => {
   return (
     <Router>
-      <Header />
-      <AnimatePresence initial={false} mode='wait'>
+      <AnimatePresence mode='wait'>
+        <Header />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
