@@ -7,6 +7,6 @@
     @apply overflow-hidden;
   }
   .section {
-    @apply h-screen w-screen  py-[180px];
+    @apply h-screen w-screen py-[180px];
   }
 }

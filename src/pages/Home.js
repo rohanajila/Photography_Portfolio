@@ -2,7 +2,7 @@ import React from 'react';
 // import image
 import WomanImg from '../img/home/woman.png';
 // import motion
-import { motion } from 'framer-motion';
+import { delay, motion } from 'framer-motion';
 // import transition
 import { transition } from '../variants';
 
@@ -15,17 +15,17 @@ const Home = () => {
       transition={transition}
       className='section'
     >
-      <div className='container mx-auto'>
-        <div className='flex'>
+      <div className='container mx-auto relative h-full flex items-center'>
+        <div className='flex items-center justify-center'>
           {/* text */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            initial={{ opacity: 0, y: '-100%' }}
+            animate={{ opacity: 1, y: 0 }}
             transition={transition}
             exit={{ opacity: 0 }}
-            className='text-[48px]'
+            className='text-[108px] font-primary font-bold capitalize leading-none'
           >
-            text
+            photographer <br /> & film maker
           </motion.div>
           {/* image */}
           <motion.div
@@ -33,7 +33,7 @@ const Home = () => {
             animate={{ scale: 1 }}
             exit={{ scale: 0 }}
             transition={transition}
-            className='max-w-[560px] flex-1 overflow-hidden'
+            className='max-w-[560px] flex-1 overflow-hidden absolute right-0 -z-10'
           >
             <motion.img
               whileHover={{ scale: 1.1 }}
