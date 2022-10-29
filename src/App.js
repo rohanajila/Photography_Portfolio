@@ -8,7 +8,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 const App = () => {
   return (
-    <div className='overflow-hidden'>
+    <div>
       <Router>
         <Header />
         <AnimRoutes />

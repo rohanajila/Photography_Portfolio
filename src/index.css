@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+  body {
+    @apply overflow-hidden;
+  }
   .section {
     @apply h-screen w-screen  py-[180px];
   }
