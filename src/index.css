@@ -4,9 +4,12 @@
 
 @layer base {
   body {
-    @apply overflow-hidden;
+    @apply overflow-hidden text-primary;
   }
   .section {
-    @apply h-screen w-screen py-[180px];
+    @apply h-screen w-screen;
+  }
+  .btn {
+    @apply py-[18px] px-[50px] h-[66px] flex items-center justify-center text-base uppercase font-secondary font-semibold bg-primary text-white;
   }
 }

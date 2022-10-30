@@ -9,7 +9,7 @@ const App = () => {
   return (
     <div>
       <Router>
-        <Header />
+        {/* <Header /> */}
         <AnimRoutes />
       </Router>
     </div>
