@@ -19,7 +19,13 @@ const Home = () => {
         {/* text & image */}
         <div className='flex flex-col justify-center'>
           {/* text */}
-          <div className='bg-yellow-200 w-full lg:w-auto z-10 lg:absolute flex flex-col justify-center items-center lg:items-start'>
+          <motion.div
+            initial={{ opacity: 0, y: -100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={transition}
+            exit={{ opacity: 0, y: -100 }}
+            className='w-full lg:w-auto z-10 lg:absolute flex flex-col justify-center items-center lg:items-start'
+          >
             <h1 className='text-[54px] lg:text-[108px] font-primary font-bold capitalize leading-[120%] tracking-[-0.05em] mb-2'>
               photographer <br /> & film maker
             </h1>
@@ -27,9 +33,9 @@ const Home = () => {
               Los Angeles, USA
             </p>
             <button className='btn mb-[30px]'>hire me</button>
-          </div>
+          </motion.div>
           {/* image */}
-          <div className='bg-blue-200 flex justify-end max-h-96 lg:max-h-max'>
+          <div className='flex justify-end max-h-96 lg:max-h-max'>
             <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}

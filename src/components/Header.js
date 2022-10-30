@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <header className='bg-white/80 fixed w-full h-[80px] z-30'>
-      <div className='container mx-auto flex items-center h-full'>
+    <header className='bg-pink-400/20 fixed w-full px-24 h-[80px] z-30'>
+      <div className='flex items-center h-full'>
         <nav className='flex space-x-12'>
           <Link to='/'>Home</Link>
           <Link to='/about'>About</Link>
