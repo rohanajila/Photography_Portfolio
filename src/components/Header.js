@@ -12,7 +12,7 @@ const Header = () => {
         <div className=''>
           <img src={Logo} alt='' />
         </div>
-        <nav className='flex space-x-12'>
+        <nav className='hidden lg:flex space-x-12'>
           <Link to='/'>Home</Link>
           <Link to='/about'>About</Link>
           <Link to='/portfolio'>Portfolio</Link>
