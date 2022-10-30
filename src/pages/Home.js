@@ -16,7 +16,8 @@ const Home = () => {
       className='section'
     >
       <div className='container mx-auto h-full relative'>
-        <div className='flex flex-col justify-center items-center lg:flex-row lg:justify-start h-full'>
+        {/* text & image */}
+        <div className='flex flex-col justify-center'>
           {/* text */}
           <div className='bg-yellow-200 w-full lg:w-auto z-10 lg:absolute flex flex-col justify-center items-center lg:items-start'>
             <h1 className='text-[54px] lg:text-[108px] font-primary font-bold capitalize leading-[120%] tracking-[-0.05em] mb-2'>
@@ -28,13 +29,13 @@ const Home = () => {
             <button className='btn mb-[30px]'>hire me</button>
           </div>
           {/* image */}
-          <div className='bg-blue-200 w-full'>
+          <div className='bg-blue-200 flex justify-end max-h-96 lg:max-h-max'>
             <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               exit={{ scale: 0 }}
               transition={transition}
-              className='max-w-[400px] lg:max-w-[560px] flex-1 overflow-hidden lg:absolute lg:top-0 lg:right-10 mx-auto lg:mx-0 w-full'
+              className='relative lg:-right-40'
             >
               <motion.img
                 whileHover={{ scale: 1.1 }}
