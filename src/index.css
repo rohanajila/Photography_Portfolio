@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply overflow-hidden text-primary;
+    @apply overflow-hidden text-primary bg-white;
   }
   .section {
     @apply h-screen w-screen;

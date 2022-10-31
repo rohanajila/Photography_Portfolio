@@ -28,14 +28,14 @@ const CursorProvider = ({ children }) => {
     default: {
       x: cursorPosition.x - 16,
       y: cursorPosition.y - 16,
-      background: '#0E1112',
+      background: '#0e1112',
     },
     text: {
       width: '150px',
       height: '150px',
       x: cursorPosition.x - 72,
       y: cursorPosition.y - 72,
-      backgroundColor: '#0E1112',
+      backgroundColor: '#fff',
       mixBlendMode: 'difference',
     },
   };
