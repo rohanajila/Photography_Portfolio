@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 // import image
 import WomanImg from '../img/home/woman.png';
 // import motion
 import { motion } from 'framer-motion';
 // import transition
 import { transition } from '../variants';
+// import cursor context
+import { CursorContext } from '../context/CursorContext';
 
 const Home = () => {
+  const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -26,7 +29,11 @@ const Home = () => {
             exit={{ opacity: 0, y: -100 }}
             className='w-full pt-36 pb-14 lg:pt-0 lg:pb-0  lg:w-auto z-10 lg:absolute flex flex-col justify-center items-center lg:items-start'
           >
-            <h1 className='text-[54px] lg:text-[108px] font-primary font-bold capitalize leading-[120%] tracking-[-0.05em] mb-2'>
+            <h1
+              onMouseEnter={mouseEnterHandler}
+              onMouseLeave={mouseLeaveHandler}
+              className='text-[54px] lg:text-[108px] font-primary font-bold capitalize leading-[120%] tracking-[-0.05em] mb-2'
+            >
               photographer <br /> & film maker
             </h1>
             <p className='text-[26px] lg:text-[36px] font-primary mb-4 lg:mb-12'>
@@ -41,7 +48,7 @@ const Home = () => {
               animate={{ scale: 1 }}
               exit={{ scale: 0 }}
               transition={transition}
-              className='relative lg:-right-40'
+              className='relative lg:-right-40 overflow-hidden'
             >
               <motion.img
                 whileHover={{ scale: 1.1 }}

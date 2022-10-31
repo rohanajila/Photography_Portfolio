@@ -1,17 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 // import logo
 import Logo from '../img/header/logo.svg';
 // import Link
 import { Link } from 'react-router-dom';
+// import cursor context
+import { CursorContext } from '../context/CursorContext';
 
 const Header = () => {
+  const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
   return (
     <header className='bg-primary/20 fixed w-full px-12 z-30 h-[80px] flex items-center'>
       <div className='flex flex-col lg:flex-row items-center w-full justify-between'>
         {/* logo */}
-        <div className=''>
+        <Link to={'/'}>
           <img src={Logo} alt='' />
-        </div>
+        </Link>
         <nav className='hidden lg:flex space-x-12'>
           <Link to='/'>Home</Link>
           <Link to='/about'>About</Link>
