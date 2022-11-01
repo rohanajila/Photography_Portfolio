@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
-// import logo
+// import components
+import Socials from './Socials';
 import Logo from '../img/header/logo.svg';
 // import Link
 import { Link } from 'react-router-dom';
@@ -12,7 +13,7 @@ const Header = () => {
     <header
       onMouseEnter={mouseEnterHandler}
       onMouseLeave={mouseLeaveHandler}
-      className='fixed w-full px-12 z-30 h-[80px] flex items-center'
+      className='fixed w-full px-[100px] z-30 h-[80px] flex items-center'
     >
       <div className='flex flex-col lg:flex-row items-center w-full justify-between'>
         {/* logo */}
@@ -27,6 +28,7 @@ const Header = () => {
           <Link to='/contact'>Contact</Link>
         </nav>
       </div>
+      <Socials />
     </header>
   );
 };
