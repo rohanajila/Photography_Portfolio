@@ -63,35 +63,3 @@ const Home = () => {
 };
 
 export default Home;
-
-//  {/* text */}
-//  <motion.div
-//  initial={{ opacity: 0, y: '-100%' }}
-//  animate={{ opacity: 1, y: 0 }}
-//  transition={transition}
-//  exit={{ opacity: 0 }}
-//  className='lg:absolute z-10 text-center lg:text-left'
-// >
-//  <h1 className='text-[54px] lg:text-[108px] font-primary font-bold capitalize leading-[120%] tracking-[-0.05em] mb-2'>
-//    photographer <br /> & film maker
-//  </h1>
-//  <p className='text-[26px] lg:text-[36px] font-primary mb-4 lg:mb-12'>
-//    Los Angeles, USA
-//  </p>
-//  <button className='btn mb-[30px]'>hire me</button>
-// </motion.div>
-// {/* image */}
-// <motion.div
-//  initial={{ scale: 0 }}
-//  animate={{ scale: 1 }}
-//  exit={{ scale: 0 }}
-//  transition={transition}
-//  className='max-w-[400px] lg:max-w-[560px] flex-1 overflow-hidden lg:absolute lg:top-0 lg:right-10'
-// >
-//  <motion.img
-//    whileHover={{ scale: 1.1 }}
-//    transition={transition}
-//    src={WomanImg}
-//    alt=''
-//  />
-// </motion.div>

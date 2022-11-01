@@ -21,7 +21,7 @@ const Header = () => {
           <img src={Logo} alt='' />
         </Link>
         <nav
-          className='hidden lg:flex space-x-12 font-semibold'
+          className='hidden xl:flex space-x-12 font-semibold'
           onMouseEnter={mouseEnterHandler}
           onMouseLeave={mouseLeaveHandler}
         >

@@ -36,8 +36,8 @@ const About = () => {
             </h1>
             <p className='mb-12 max-w-md'>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Senectus
-              scelerisque viverra at id aenean scelerisque. Nec eget condimentum
-              etiam leo.
+              <b> scelerisque viverra</b> at id aenean scelerisque. Nec eget
+              condimentum etiam leo.
               <br />
               <br />
               Morbi at eget fusce feugiat volutpat et volutpat malesuada. At
