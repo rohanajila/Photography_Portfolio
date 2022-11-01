@@ -14,7 +14,7 @@ const Socials = () => {
   const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
   return (
     <div
-      className='ml-24 hidden lg:flex'
+      className='ml-24 hidden xl:flex'
       onMouseEnter={mouseEnterHandler}
       onMouseLeave={mouseLeaveHandler}
     >

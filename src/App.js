@@ -11,14 +11,13 @@ import { CursorContext } from './context/CursorContext';
 
 const App = () => {
   const { cursorBg, cursorVariants } = useContext(CursorContext);
-
   return (
     <>
       <Router>
         <Header />
         <AnimRoutes />
       </Router>
-      {/*  cursor */}
+      {/* cursor */}
       <motion.div
         variants={cursorVariants}
         animate={cursorBg}
