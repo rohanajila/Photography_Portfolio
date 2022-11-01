@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 // import icons
 import { IoMdClose } from 'react-icons/io';
+import { CgMenuRight } from 'react-icons/cg';
 // import motion
 import { motion } from 'framer-motion';
+import { CursorContext } from '../context/CursorContext';
 
 const menuVariants = {
   hidden: {
@@ -17,11 +19,19 @@ const menuVariants = {
 };
 
 const MobileNav = () => {
-  const [openMenu, setOpenMenu] = useState(true);
+  const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
+  const [openMenu, setOpenMenu] = useState(false);
   return (
     <nav className='text-primary xl:hidden'>
       {/* nav trigger btn */}
-      <div onClick={() => setOpenMenu(true)}>nav trigger</div>
+      <div
+        onMouseEnter={mouseEnterHandler}
+        onMouseLeave={mouseLeaveHandler}
+        className='text-3xl cursor-pointer'
+        onClick={() => setOpenMenu(true)}
+      >
+        <CgMenuRight />
+      </div>
       {/* menu */}
       <motion.div
         variants={menuVariants}
