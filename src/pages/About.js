@@ -24,7 +24,7 @@ const About = () => {
         onMouseLeave={mouseLeaveHandler}
       >
         {/* text & image */}
-        <div className='flex flex-col lg:flex-row h-full items-center gap-x-24 justify-center text-center lg:text-left'>
+        <div className='flex flex-col lg:flex-row h-full items-center gap-x-24 justify-center text-center lg:text-left lg:pt-16'>
           {/* image */}
           <div className='flex-1 max-h-96 lg:max-h-max order-2 lg:order-none overflow-hidden'>
             <img src={WomanImg} alt='' />
