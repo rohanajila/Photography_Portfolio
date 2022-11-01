@@ -24,17 +24,17 @@ const About = () => {
         onMouseLeave={mouseLeaveHandler}
       >
         {/* text & image */}
-        <div className='flex flex-col lg:flex-row h-full items-center space-x-24'>
+        <div className='flex flex-col lg:flex-row h-full items-center gap-x-24 justify-center text-center lg:text-left'>
           {/* image */}
-          <div className='flex-1'>
+          <div className='flex-1 max-h-96 lg:max-h-max order-2 lg:order-none overflow-hidden'>
             <img src={WomanImg} alt='' />
           </div>
           {/* text */}
           <div className='flex-1 pt-36 pb-14 lg:pt-0 lg:pb-0 lg:w-auto z-10  flex flex-col justify-center items-center lg:items-start'>
-            <h1 className='text-[54px] lg:text-[108px] font-primary font-bold capitalize leading-[120%] tracking-[-0.05em] mb-2'>
+            <h1 className='text-[54px] lg:text-[108px] font-primary font-bold capitalize leading-[120%] tracking-[-0.05em] mb-6'>
               About me
             </h1>
-            <p className='mb-12'>
+            <p className='mb-12 max-w-md'>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Senectus
               scelerisque viverra at id aenean scelerisque. Nec eget condimentum
               etiam leo.
