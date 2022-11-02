@@ -43,12 +43,6 @@ const Header = () => {
           >
             Portfolio
           </Link>
-          <Link
-            className='text-[#696c6d] hover:text-primary transition'
-            to='/blog'
-          >
-            Blog
-          </Link>
           <Link className='text-[#696c6d] hover:text-primary' to='/contact'>
             Contact
           </Link>

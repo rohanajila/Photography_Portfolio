@@ -11,7 +11,7 @@ const Contact = () => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: '100%' }}
       transition={transition}
-      className='section bg-green-200'
+      className='section bg-blue-200/20'
     >
       <div className='container mx-auto'>contact</div>
     </motion.section>
