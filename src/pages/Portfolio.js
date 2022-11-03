@@ -3,6 +3,13 @@ import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 // import transition
 import { transition } from '../variants';
+// import images
+import Image1 from '../img/portfolio/1.png';
+import Image2 from '../img/portfolio/2.png';
+import Image3 from '../img/portfolio/3.png';
+import Image4 from '../img/portfolio/4.png';
+import Image5 from '../img/portfolio/5.png';
+import Image6 from '../img/portfolio/6.png';
 
 const Portfolio = () => {
   return (
@@ -30,18 +37,34 @@ const Portfolio = () => {
             </p>
             <button className='btn mb-[30px] mx-auto lg:mx-0'>hire me</button>
           </div>
-          <div className='grid grid-cols-2 lg:gap-3'>
-            <div className='w-[250px] lg:w-[320px] h-[187px] lg:h-[220px] bg-blue-200'>
-              photo 1
+          <div className='grid grid-cols-2 lg:gap-2'>
+            <div className='w-[250px] lg:w-[320px] h-[187px] lg:h-[220px] bg-accent overflow-hidden'>
+              <img
+                className='object-cover w-[250px] lg:w-[320px] h-[187px] lg:h-[220px] hover:scale-110 transition-all duration-500'
+                src={Image1}
+                alt=''
+              />
             </div>
-            <div className='w-[250px] lg:w-[320px] h-[187px] lg:h-[220px] bg-blue-200'>
-              photo 2
+            <div className='w-[250px] lg:w-[320px] h-[187px] lg:h-[220px] bg-accent overflow-hidden'>
+              <img
+                className='object-cover w-[250px] lg:w-[320px] h-[187px] lg:h-[220px] hover:scale-110 transition-all duration-500'
+                src={Image2}
+                alt=''
+              />
             </div>
-            <div className='w-[250px] lg:w-[320px] h-[187px] lg:h-[220px] bg-blue-200'>
-              photo 3
+            <div className='w-[250px] lg:w-[320px] h-[187px] lg:h-[220px] bg-accent overflow-hidden'>
+              <img
+                className='object-cover w-[250px] lg:w-[320px] h-[187px] lg:h-[220px] hover:scale-110 transition-all duration-500'
+                src={Image3}
+                alt=''
+              />
             </div>
-            <div className='w-[250px] lg:w-[320px] h-[187px] lg:h-[220px] bg-blue-200'>
-              photo 4
+            <div className='w-[250px] lg:w-[320px] h-[187px] lg:h-[220px] bg-accent overflow-hidden'>
+              <img
+                className='object-cover w-[250px] lg:w-[320px] h-[187px] lg:h-[220px] hover:scale-110 transition-all duration-500'
+                src={Image4}
+                alt=''
+              />
             </div>
           </div>
         </div>
