@@ -11,7 +11,7 @@ const Portfolio = () => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: '100%' }}
       transition={transition}
-      className='section bg-blue-200/20'
+      className='section'
     >
       <div className='container mx-auto h-full relative'>
         <div className='flex flex-col lg:flex-row h-full items-center gap-x-24 justify-start text-center lg:text-left pt-36 pb-8'>
@@ -30,17 +30,17 @@ const Portfolio = () => {
             </p>
             <button className='btn mb-[30px] mx-auto lg:mx-0'>hire me</button>
           </div>
-          <div className='grid grid-cols-2 gap-3'>
-            <div className='w-[220px] lg:w-[320px] h-[180px] lg:h-[220px] bg-blue-200'>
+          <div className='grid grid-cols-2 lg:gap-3'>
+            <div className='w-[250px] lg:w-[320px] h-[187px] lg:h-[220px] bg-blue-200'>
               photo 1
             </div>
-            <div className='w-[220px] lg:w-[320px] h-[180px] lg:h-[220px] bg-blue-200'>
+            <div className='w-[250px] lg:w-[320px] h-[187px] lg:h-[220px] bg-blue-200'>
               photo 2
             </div>
-            <div className='w-[220px] lg:w-[320px] h-[180px] lg:h-[220px] bg-blue-200'>
+            <div className='w-[250px] lg:w-[320px] h-[187px] lg:h-[220px] bg-blue-200'>
               photo 3
             </div>
-            <div className='w-[220px] lg:w-[320px] h-[180px] lg:h-[220px] bg-blue-200'>
+            <div className='w-[250px] lg:w-[320px] h-[187px] lg:h-[220px] bg-blue-200'>
               photo 4
             </div>
           </div>

@@ -16,7 +16,7 @@ const About = () => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: '100%' }}
       transition={transition}
-      className='section bg-blue-200/20'
+      className='section'
     >
       <div
         className='container mx-auto h-full relative'
