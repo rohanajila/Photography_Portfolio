@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 // import motion
 import { motion } from 'framer-motion';
 // import transition
-import { transition } from '../variants';
+import { transition1 } from '../transitions';
 // import image
 import WomanImg from '../img/contact/woman.png';
 // import cursor context
@@ -15,7 +15,7 @@ const Contact = () => {
       initial={{ opacity: 0, y: '100%' }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: '100%' }}
-      transition={transition}
+      transition={transition1}
       className='section bg-white'
     >
       <div className='container mx-auto h-full'>
@@ -24,7 +24,7 @@ const Contact = () => {
           <motion.div
             initial={{ opacity: 0, y: '100%' }}
             animate={{ opacity: 1, y: 0 }}
-            transition={transition}
+            transition={transition1}
             exit={{ opacity: 0, y: '100%' }}
             className='hidden lg:flex bg-[#EEF7F9] absolute bottom-0 left-0 right-0 top-72 -z-10'
           ></motion.div>
@@ -65,7 +65,7 @@ const Contact = () => {
             onMouseLeave={mouseLeaveHandler}
             initial={{ opacity: 0, y: '100%' }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ transition: transition, duration: 1.5 }}
+            transition={{ transition: transition1, duration: 1.5 }}
             exit={{ opacity: 0, y: '100%' }}
             className='lg:flex-1'
           >
