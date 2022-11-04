@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 // import motion
 import { motion } from 'framer-motion';
 // import transition
@@ -8,10 +8,11 @@ import Image1 from '../img/portfolio/1.png';
 import Image2 from '../img/portfolio/2.png';
 import Image3 from '../img/portfolio/3.png';
 import Image4 from '../img/portfolio/4.png';
-import Image5 from '../img/portfolio/5.png';
-import Image6 from '../img/portfolio/6.png';
+// import context
+import { CursorContext } from '../context/CursorContext';
 
 const Portfolio = () => {
+  const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
   return (
     <motion.section
       initial={{ opacity: 0, y: '100%' }}
@@ -22,10 +23,12 @@ const Portfolio = () => {
     >
       <div className='container mx-auto h-full relative'>
         <div className='flex flex-col lg:flex-row h-full items-center gap-x-24 justify-start text-center lg:text-left pt-36 pb-8'>
-          <div>
-            <h1 className='text-[54px] lg:text-[108px] font-primary font-bold capitalize leading-[120%] tracking-[-0.05em] mb-10'>
-              Portfolio
-            </h1>
+          {/* text */}
+          <motion.div
+            onMouseEnter={mouseEnterHandler}
+            onMouseLeave={mouseLeaveHandler}
+          >
+            <h1 className='h1'>Portfolio</h1>
             <p className='mb-12 max-w-md'>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Senectus
               <b> scelerisque viverra</b> at id aenean scelerisque. Nec eget
@@ -36,8 +39,13 @@ const Portfolio = () => {
               suspendisse nisi, quam neque in leo sollicitudin.
             </p>
             <button className='btn mb-[30px] mx-auto lg:mx-0'>hire me</button>
-          </div>
-          <div className='grid grid-cols-2 lg:gap-2'>
+          </motion.div>
+          {/* images */}
+          <motion.div
+            onMouseEnter={mouseEnterHandler}
+            onMouseLeave={mouseLeaveHandler}
+            className='grid grid-cols-2 lg:gap-2'
+          >
             <div className='w-[250px] lg:w-[320px] h-[187px] lg:h-[220px] bg-accent overflow-hidden'>
               <img
                 className='object-cover w-[250px] lg:w-[320px] h-[187px] lg:h-[220px] hover:scale-110 transition-all duration-500'
@@ -66,7 +74,7 @@ const Portfolio = () => {
                 alt=''
               />
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </motion.section>

@@ -5,6 +5,7 @@ import { CgMenuRight } from 'react-icons/cg';
 // import motion
 import { motion } from 'framer-motion';
 import { CursorContext } from '../context/CursorContext';
+import { Link } from 'react-router-dom';
 
 const menuVariants = {
   hidden: {
@@ -47,7 +48,26 @@ const MobileNav = () => {
           <IoMdClose />
         </div>
         {/* menu list */}
-        <ul>menu list</ul>
+        <ul>
+          <Link className='text-[#696c6d] hover:text-primary transition' to='/'>
+            Home
+          </Link>
+          <Link
+            className='text-[#696c6d] hover:text-primary transition'
+            to='/about'
+          >
+            About
+          </Link>
+          <Link
+            className='text-[#696c6d] hover:text-primary transition'
+            to='/portfolio'
+          >
+            Portfolio
+          </Link>
+          <Link className='text-[#696c6d] hover:text-primary' to='/contact'>
+            Contact
+          </Link>
+        </ul>
       </motion.div>
     </nav>
   );
