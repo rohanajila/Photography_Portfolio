@@ -7,6 +7,8 @@ import { transition1 } from '../transitions';
 import WomanImg from '../img/about/woman.png';
 // import context
 import { CursorContext } from '../context/CursorContext';
+// import link
+import { Link } from 'react-router-dom';
 
 const About = () => {
   const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
@@ -49,7 +51,9 @@ const About = () => {
               Morbi at eget fusce feugiat volutpat et volutpat malesuada. At
               suspendisse nisi, quam neque in leo sollicitudin.
             </p>
-            <button className='btn'>View my work</button>
+            <Link to={'/portfolio'} className='btn'>
+              View my work
+            </Link>
           </motion.div>
         </div>
       </div>

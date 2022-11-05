@@ -7,6 +7,8 @@ import { motion } from 'framer-motion';
 import { transition1 } from '../transitions';
 // import cursor context
 import { CursorContext } from '../context/CursorContext';
+// import link
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
@@ -37,7 +39,9 @@ const Home = () => {
             <p className='text-[26px] lg:text-[36px] font-primary mb-4 lg:mb-12'>
               Los Angeles, USA
             </p>
-            <button className='btn mb-[30px]'>hire me</button>
+            <Link to={'/contact'} className='btn mb-[30px]'>
+              hire me
+            </Link>
           </motion.div>
           {/* image */}
           <div className='flex justify-end max-h-96 lg:max-h-max'>

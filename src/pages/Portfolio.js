@@ -10,6 +10,8 @@ import Image3 from '../img/portfolio/3.png';
 import Image4 from '../img/portfolio/4.png';
 // import context
 import { CursorContext } from '../context/CursorContext';
+// import link
+import { Link } from 'react-router-dom';
 
 const Portfolio = () => {
   const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
@@ -31,6 +33,7 @@ const Portfolio = () => {
             transition={transition1}
             onMouseEnter={mouseEnterHandler}
             onMouseLeave={mouseLeaveHandler}
+            className='flex flex-col lg:items-start'
           >
             <h1 className='h1'>Portfolio</h1>
             <p className='mb-12 max-w-sm'>
@@ -42,7 +45,9 @@ const Portfolio = () => {
               Morbi at eget fusce feugiat volutpat et volutpat malesuada. At
               suspendisse nisi, quam neque in leo sollicitudin.
             </p>
-            <button className='btn mb-[30px] mx-auto lg:mx-0'>hire me</button>
+            <Link to={'/contact'} className='btn mb-[30px] mx-auto lg:mx-0'>
+              hire me
+            </Link>
           </motion.div>
           {/* images */}
           <motion.div
