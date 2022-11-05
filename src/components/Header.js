@@ -11,7 +11,7 @@ import { CursorContext } from '../context/CursorContext';
 const Header = () => {
   const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
   return (
-    <header className='fixed w-full px-[30px] lg:px-[100px] z-30 h-[140px] flex items-center'>
+    <header className='fixed w-full px-[30px] lg:px-[100px] z-30 h-[100px] lg:h-[140px] flex items-center'>
       <div className='flex flex-col lg:flex-row lg:items-center w-full justify-between'>
         {/* logo */}
         <Link
@@ -24,7 +24,7 @@ const Header = () => {
         </Link>
         {/* nav */}
         <nav
-          className='hidden xl:flex space-x-12 font-semibold'
+          className='hidden xl:flex gap-x-12 font-semibold'
           onMouseEnter={mouseEnterHandler}
           onMouseLeave={mouseLeaveHandler}
         >

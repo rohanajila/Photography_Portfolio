@@ -48,25 +48,21 @@ const MobileNav = () => {
           <IoMdClose />
         </div>
         {/* menu list */}
-        <ul>
-          <Link className='text-[#696c6d] hover:text-primary transition' to='/'>
-            Home
-          </Link>
-          <Link
-            className='text-[#696c6d] hover:text-primary transition'
-            to='/about'
-          >
-            About
-          </Link>
-          <Link
-            className='text-[#696c6d] hover:text-primary transition'
-            to='/portfolio'
-          >
-            Portfolio
-          </Link>
-          <Link className='text-[#696c6d] hover:text-primary' to='/contact'>
-            Contact
-          </Link>
+        <ul className='h-full flex flex-col justify-center items-center gap-y-8 text-primary font-primary font-bold text-3xl'>
+          <li>
+            <Link to='/'>Home</Link>
+          </li>
+          <li>
+            <Link to='/about'>About</Link>
+          </li>
+          <li>
+            <Link to='/portfolio'>Portfolio</Link>
+          </li>
+          <li>
+            <Link className=' hover:text-primary' to='/contact'>
+              Contact
+            </Link>
+          </li>
         </ul>
       </motion.div>
     </nav>

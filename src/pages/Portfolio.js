@@ -22,7 +22,7 @@ const Portfolio = () => {
       className='section'
     >
       <div className='container mx-auto h-full relative'>
-        <div className='flex flex-col lg:flex-row h-full items-center gap-x-24 justify-start text-center lg:text-left pt-36 pb-8'>
+        <div className='flex flex-col lg:flex-row h-full items-center gap-x-24 justify-start text-center lg:text-left pt-24 lg:pt-36 pb-8'>
           {/* text */}
           <motion.div
             initial={{ opacity: 0, y: '-80%' }}
@@ -33,7 +33,7 @@ const Portfolio = () => {
             onMouseLeave={mouseLeaveHandler}
           >
             <h1 className='h1'>Portfolio</h1>
-            <p className='mb-12 max-w-md'>
+            <p className='mb-12 max-w-sm'>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Senectus
               <b> scelerisque viverra</b> at id aenean scelerisque. Nec eget
               condimentum etiam leo.
@@ -50,30 +50,30 @@ const Portfolio = () => {
             onMouseLeave={mouseLeaveHandler}
             className='grid grid-cols-2 lg:gap-2'
           >
-            <div className='w-[250px] lg:w-[320px] h-[187px] lg:h-[220px] bg-accent overflow-hidden'>
+            <div className='max-w-[250px] lg:max-w-[320px] h-[187px] lg:h-[220px] bg-accent overflow-hidden'>
               <img
-                className='object-cover w-[250px] lg:w-[320px] h-[187px] lg:h-[220px] hover:scale-110 transition-all duration-500'
+                className='object-cover h-full  lg:h-[220px] hover:scale-110 transition-all duration-500'
                 src={Image1}
                 alt=''
               />
             </div>
-            <div className='w-[250px] lg:w-[320px] h-[187px] lg:h-[220px] bg-accent overflow-hidden'>
+            <div className='max-w-[250px] lg:max-w-[320px] h-[187px] lg:h-[220px] bg-accent overflow-hidden'>
               <img
-                className='object-cover w-[250px] lg:w-[320px] h-[187px] lg:h-[220px] hover:scale-110 transition-all duration-500'
+                className='object-cover h-full  lg:h-[220px] hover:scale-110 transition-all duration-500'
                 src={Image2}
                 alt=''
               />
             </div>
-            <div className='w-[250px] lg:w-[320px] h-[187px] lg:h-[220px] bg-accent overflow-hidden'>
+            <div className='max-w-[250px] lg:max-w-[320px] h-[187px] lg:h-[220px] bg-accent overflow-hidden'>
               <img
-                className='object-cover w-[250px] lg:w-[320px] h-[187px] lg:h-[220px] hover:scale-110 transition-all duration-500'
+                className='object-cover h-full  lg:h-[220px] hover:scale-110 transition-all duration-500'
                 src={Image3}
                 alt=''
               />
             </div>
-            <div className='w-[250px] lg:w-[320px] h-[187px] lg:h-[220px] bg-accent overflow-hidden'>
+            <div className='max-w-[250px] lg:max-w-[320px] h-[187px] lg:h-[220px] bg-accent overflow-hidden'>
               <img
-                className='object-cover w-[250px] lg:w-[320px] h-[187px] lg:h-[220px] hover:scale-110 transition-all duration-500'
+                className='object-cover h-full  lg:h-[220px] hover:scale-110 transition-all duration-500'
                 src={Image4}
                 alt=''
               />
