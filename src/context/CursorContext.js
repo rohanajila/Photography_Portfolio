@@ -1,73 +1,71 @@
 import React, { useState, useEffect, createContext } from 'react';
 
+// create context
 export const CursorContext = createContext();
 
 const CursorProvider = ({ children }) => {
-  // mouse position state
-  const [cursorPosition, setCursorPosition] = useState({
+  // cursor position state
+  const [cursorPos, setCursorPos] = useState({
     x: 0,
     y: 0,
   });
   // cursor bg state
-  const [cursorBg, setCursorBg] = useState('default');
-  // mobile viewport
+  const [cursorBG, setCursorBG] = useState('default');
+
   const mobileViewportIsActive = window.innerWidth < 768;
 
   useEffect(() => {
     if (!mobileViewportIsActive) {
       const move = (e) => {
-        setCursorPosition({
+        setCursorPos({
           x: e.clientX,
           y: e.clientY,
         });
       };
       window.addEventListener('mousemove', move);
+      // remove event
       return () => {
         window.removeEventListener('mousemove', move);
       };
     } else {
-      setCursorBg('none');
+      setCursorBG('none');
     }
   });
 
+  // cursor variants
   const cursorVariants = {
     default: {
-      x: cursorPosition.x - 16,
-      y: cursorPosition.y - 16,
+      x: cursorPos.x - 16,
+      y: cursorPos.y - 16,
       backgroundColor: '#0e1112',
     },
     text: {
       width: '150px',
       height: '150px',
-      x: cursorPosition.x - 72,
-      y: cursorPosition.y - 72,
+      x: cursorPos.x - 72,
+      y: cursorPos.y - 72,
       backgroundColor: '#fff',
       mixBlendMode: 'difference',
     },
     none: {
-      width: '0',
-      height: '0',
-      backgroundColor: 'rgba(255, 255, 255, 1)',
+      width: 0,
+      height: 0,
+      backgroundColor: 'rgba(255,255,255, 1)',
     },
   };
 
+  // mouse enter handler
   const mouseEnterHandler = () => {
-    setCursorBg('text');
+    setCursorBG('text');
   };
-
+  // mouse leaver handler
   const mouseLeaveHandler = () => {
-    setCursorBg('default');
+    setCursorBG('default');
   };
 
   return (
     <CursorContext.Provider
-      value={{
-        cursorPosition,
-        cursorBg,
-        cursorVariants,
-        mouseEnterHandler,
-        mouseLeaveHandler,
-      }}
+      value={{ cursorVariants, cursorBG, mouseEnterHandler, mouseLeaveHandler }}
     >
       {children}
     </CursorContext.Provider>

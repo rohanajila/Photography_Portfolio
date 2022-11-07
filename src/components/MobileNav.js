@@ -1,12 +1,13 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 // import icons
 import { IoMdClose } from 'react-icons/io';
 import { CgMenuRight } from 'react-icons/cg';
+// import link
+import { Link } from 'react-router-dom';
 // import motion
 import { motion } from 'framer-motion';
-import { CursorContext } from '../context/CursorContext';
-import { Link } from 'react-router-dom';
 
+// menu variants
 const menuVariants = {
   hidden: {
     x: '100%',
@@ -20,16 +21,13 @@ const menuVariants = {
 };
 
 const MobileNav = () => {
-  const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
   const [openMenu, setOpenMenu] = useState(false);
   return (
     <nav className='text-primary xl:hidden'>
-      {/* nav trigger btn */}
+      {/* nav open button */}
       <div
-        onMouseEnter={mouseEnterHandler}
-        onMouseLeave={mouseLeaveHandler}
-        className='text-3xl cursor-pointer'
         onClick={() => setOpenMenu(true)}
+        className='text-3xl cursor-pointer'
       >
         <CgMenuRight />
       </div>
@@ -43,12 +41,12 @@ const MobileNav = () => {
         {/* icon */}
         <div
           onClick={() => setOpenMenu(false)}
-          className='z-30 absolute left-4 top-14 text-4xl text-primary cursor-pointer'
+          className='text-4xl absolute z-30 left-4 top-14 text-primary cursor-pointer'
         >
           <IoMdClose />
         </div>
         {/* menu list */}
-        <ul className='h-full flex flex-col justify-center items-center gap-y-8 text-primary font-primary font-bold text-3xl'>
+        <ul className='h-full flex flex-col justify-center items-center gap-y-8 text-primary font-primary  font-bold text-3xl'>
           <li>
             <Link to='/'>Home</Link>
           </li>
@@ -59,9 +57,7 @@ const MobileNav = () => {
             <Link to='/portfolio'>Portfolio</Link>
           </li>
           <li>
-            <Link className=' hover:text-primary' to='/contact'>
-              Contact
-            </Link>
+            <Link to='/contact'>Contact</Link>
           </li>
         </ul>
       </motion.div>
