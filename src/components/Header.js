@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 // import components
 import Socials from './Socials';
-import Logo from '../img/header/logo.svg';
+import Logo from '../img/header/jack_films_logo.svg';
 import MobileNav from './MobileNav';
 // import link
 import { Link } from 'react-router-dom';
@@ -21,7 +21,8 @@ const Header = () => {
           to={'/'}
           className='max-w-[200px]'
         >
-          <img src={Logo} alt='' />
+          {/* <img src={Logo} alt='' /> */}
+          <img src={Logo} alt="Jack Films logo" />
         </Link>
         {/* nav - initially hidden - show on desktop mode */}
         <nav

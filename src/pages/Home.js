@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 // import images
-import WomanImg from '../img/home/woman.png';
+import WomanImg from '../img/home/man.png';
 // import link
 import { Link } from 'react-router-dom';
 // import motion
@@ -37,7 +37,7 @@ const Home = () => {
               photographer <br /> & film maker
             </h1>
             <p className='text-[26px] lg:text-[36px] font-primary mb-4 lg:mb-12'>
-              Los Angeles, USA
+              Mumbai, India
             </p>
             <Link to={'/contact'} className='btn mb-[30px]'>
               hire me
