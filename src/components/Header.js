@@ -54,6 +54,13 @@ const Header = () => {
           >
             Contact
           </Link>
+          <Link
+            to={'/pricing'}
+            className='text-[#696c6d] hover:text-primary transition'
+          >
+            Pricing
+          </Link>
+
         </nav>
       </div>
       {/* socials */}
