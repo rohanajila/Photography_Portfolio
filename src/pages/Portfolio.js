@@ -1,93 +1,92 @@
-import React, { useContext } from 'react';
-// import images
-import Image1 from '../img/portfolio/1.png';
-import Image2 from '../img/portfolio/2.png';
-import Image3 from '../img/portfolio/3.png';
-import Image4 from '../img/portfolio/4.png';
-// import link
-import { Link } from 'react-router-dom';
-// import motion
+import React from 'react';
 import { motion } from 'framer-motion';
-// import transition
-import { transition1 } from '../transitions';
-// import context
-import { CursorContext } from '../context/CursorContext';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import { Link } from 'react-router-dom';
+import 'react-photo-view/dist/react-photo-view.css';
+
+// Image imports (assuming these exist in /src/assets/images)
+import image1 from '../assets/images/image1.JPG';
+import image2 from '../assets/images/image2.JPG';
+import image3 from '../assets/images/image3.JPG';
+import image4 from '../assets/images/image4.JPG';
+import image5 from '../assets/images/image5.JPG';
+import image6 from '../assets/images/image6.JPG';
+import image7 from '../assets/images/image7.JPG';
+import image8 from '../assets/images/image8.JPG';
+import image9 from '../assets/images/image9.JPG';
+import image10 from '../assets/images/image10.JPG';
+import image11 from '../assets/images/image11.JPG';
+import image12 from '../assets/images/image12.JPG';
+import image13 from '../assets/images/image13.JPG';
+import image14 from '../assets/images/image14.JPG';
+
+const images = [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11, image12, image13, image14];
 
 const Portfolio = () => {
-  const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
   return (
-    <motion.section
-      initial={{ opacity: 0, y: '100%' }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: '100%' }}
-      transition={transition1}
-      className='section'
-    >
-      <div className='container mx-auto h-full relative'>
-        <div className='flex flex-col lg:flex-row h-full items-center justify-start gap-x-24 text-center lg:text-left pt-24 lg:pt-36 pb-8'>
-          {/* text */}
-          <motion.div
-            onMouseEnter={mouseEnterHandler}
-            onMouseLeave={mouseLeaveHandler}
-            initial={{ opacity: 0, y: '-80%' }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: '-80%' }}
-            transition={transition1}
-            className='flex flex-col lg:items-start'
+    <section className="min-h-screen bg-white text-black px-4 pt-36 pb-16 cursor-default">
+      <div className="container mx-auto">
+        <motion.h1
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="text-[40px] lg:text-[80px] leading-none mb-6 font-bold"
+        >
+          
+          <h1 className='h1'>Portfolio</h1>
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-lg mb-4 max-w-4xl"
+        >
+          Welcome to <strong>Jack Films Nagpur</strong>, founded by <strong>Sanket Jakkanwar</strong>. We specialize in documenting life's most cherished events — from weddings and engagements to intimate portrait sessions. Our approach blends artistry and emotion to tell stories that last a lifetime.
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="text-lg mb-8 max-w-4xl"
+        >
+          Explore our featured moments below. If you like what you see, let’s create something timeless together.
+        </motion.p>
+
+        <div className="mb-12">
+          <Link
+            to="/contact"
+            className="bg-black text-white font-semibold py-3 px-8 rounded transition-transform duration-300 hover:scale-105 hover:bg-gray-900 inline-block"
           >
-            <h1 className='h1'>Portfolio</h1>
-            <p className='mb-12 max-w-sm'>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              <b> Exercitationem, veritatis.</b> Veritatis illum aut,
-              reprehenderit sed dolorem dolore.
-              <br />
-              <br />
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Recusandae, iure! Ullam, dolore? Eligendi, quam mollitia.
-            </p>
-            <Link to={'/contact'} className='btn mb-[30px] mx-auto lg:mx-0'>
-              Hire me
-            </Link>
-          </motion.div>
-          {/* image grid */}
-          <div
-            onMouseEnter={mouseEnterHandler}
-            onMouseLeave={mouseLeaveHandler}
-            className='grid grid-cols-2 lg:gap-2'
-          >
-            {/* image */}
-            <div className='max-w-[250px] lg:max-w-[320px] h-[187px] lg:h-[220px] bg-accent overflow-hidden'>
-              <img
-                className='object-cover h-full lg:h-[220px] hover:scale-110 transition-all duration-500'
-                src={Image1}
-                alt=''
-              />
-            </div>
-            <div className='max-w-[250px] lg:max-w-[320px] h-[187px] lg:h-[220px] bg-accent overflow-hidden'>
-              <img
-                className='object-cover h-full lg:h-[220px] hover:scale-110 transition-all duration-500'
-                src={Image2}
-                alt=''
-              />
-            </div>
-            <div className='max-w-[250px] lg:max-w-[320px] h-[187px] lg:h-[220px] bg-accent overflow-hidden'>
-              <img
-                className='object-cover h-full lg:h-[220px] hover:scale-110 transition-all duration-500'
-                src={Image3}
-                alt=''
-              />
-            </div>
-            <div className='max-w-[250px] lg:max-w-[320px] h-[187px] lg:h-[220px] bg-accent overflow-hidden'>
-              <img
-                className='object-cover h-full lg:h-[220px] hover:scale-110 transition-all duration-500'
-                src={Image4}
-                alt=''
-              />
-            </div>
-          </div>
+            HIRE ME
+          </Link>
         </div>
+
+        <PhotoProvider>
+          <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
+            {images.map((img, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+                className="break-inside-avoid overflow-hidden rounded-lg shadow-md hover:shadow-xl cursor-pointer"
+              >
+                <PhotoView src={img}>
+                  <img
+                    src={img}
+                    alt={`Gallery ${index + 1}`}
+                    className="w-full h-auto object-cover transition-transform duration-200 hover:scale-105"
+                  />
+                </PhotoView>
+              </motion.div>
+            ))}
+          </div>
+        </PhotoProvider>
       </div>
-    </motion.section>
+    </section>
   );
 };
 

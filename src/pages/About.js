@@ -8,10 +8,10 @@ import { motion } from 'framer-motion';
 // import transition
 import { transition1 } from '../transitions';
 // import cursor context
-import { CursorContext } from '../context/CursorContext';
+
 
 const About = () => {
-  const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
+  
   return (
     <motion.section
       initial={{ opacity: 0, y: '100%' }}
@@ -21,9 +21,8 @@ const About = () => {
       className='section'
     >
       <div
-        onMouseEnter={mouseEnterHandler}
-        onMouseLeave={mouseLeaveHandler}
-        className='container mx-auto h-full relative'
+        
+        className='container mx-auto relative'
       >
         {/* text & img wrapper */}
         <div className='flex flex-col lg:flex-row h-full items-center justify-center gap-x-24 text-center lg:text-left lg:pt-16'>
@@ -40,18 +39,30 @@ const About = () => {
             className='flex-1 pt-36 pb-14 lg:pt-0 lg:w-auto z-10 flex flex-col justify-center items-center lg:items-start'
           >
             <h1 className='h1'>About me</h1>
-            <p className='mb-12 max-w-sm'>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              <b> Exercitationem, veritatis.</b> Veritatis illum aut,
-              reprehenderit sed dolorem dolore.
-              <br />
-              <br />
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Recusandae, iure! Ullam, dolore? Eligendi, quam mollitia.
+            <p className="text-lg md:text-xl max-w-xl mb-6">
+              <strong>Jack Films Nagpur</strong> is led by <strong>Sanket Jakkanwar</strong>, a passionate photographer and filmmaker dedicated to capturing real moments with cinematic depth. Based in Nagpur, we specialize in weddings, pre-wedding shoots, event coverage, and storytelling visuals that connect emotionally.
             </p>
-            <Link to={'/portfolio'} className='btn'>
-              View my work
-            </Link>
+            <p className="text-lg md:text-xl max-w-xl mb-6">
+               Whether it's a vibrant celebration or an intimate portrait, we focus on crafting timeless memories with professional quality and a personal touch. Our studio is located at:
+            </p>
+            <p className="text-lg md:text-xl max-w-xl mb-6">
+              <strong>171, Sai Shilpa Apartment</strong><br />
+              Ladekar Layout, Manewada Road<br />
+              Nagpur – 440024
+            </p>
+            <p className="text-lg md:text-xl max-w-xl">
+              <strong>Contact:</strong> <a href="tel:9789459897" className="text-yellow-500 hover:underline">9789459897</a>
+            </p>
+            
+
+            <div className="mb-12">
+                      <Link
+                        to="/portfolio"
+                        className="bg-black text-white font-semibold py-3 px-8 rounded transition-transform duration-300 hover:scale-105 hover:bg-gray-900 inline-block"
+                      >
+                        View my work
+                      </Link>
+                    </div>
           </motion.div>
         </div>
       </div>

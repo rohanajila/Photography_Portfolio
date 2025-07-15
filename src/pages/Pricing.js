@@ -4,10 +4,10 @@ import { motion } from 'framer-motion';
 // import transition
 import { transition1 } from '../transitions';
 // import context
-import { CursorContext } from '../context/CursorContext';
+
 
 const Pricing = () => {
-  const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
+  
 
   return (
     <motion.section
@@ -18,8 +18,7 @@ const Pricing = () => {
       className='section bg-white'
     >
       <div
-        onMouseEnter={mouseEnterHandler}
-        onMouseLeave={mouseLeaveHandler}
+        
         className='container mx-auto h-full flex flex-col justify-center items-center pt-36'
       >
         <h1 className='h1 mb-8'>Pricing</h1>

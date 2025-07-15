@@ -1,71 +1,60 @@
-import React, { useState, useEffect, createContext } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 
-// create context
 export const CursorContext = createContext();
 
 const CursorProvider = ({ children }) => {
-  // cursor position state
-  const [cursorPos, setCursorPos] = useState({
-    x: 0,
-    y: 0,
-  });
-  // cursor bg state
+  const [position, setPosition] = useState({ x: 0, y: 0 });
   const [cursorBG, setCursorBG] = useState('default');
+  const [cursorVariants, setCursorVariants] = useState({});
 
-  const mobileViewportIsActive = window.innerWidth < 768;
-
+  // Handle mouse movement with throttling using requestAnimationFrame
   useEffect(() => {
-    if (!mobileViewportIsActive) {
-      const move = (e) => {
-        setCursorPos({
-          x: e.clientX,
-          y: e.clientY,
-        });
-      };
-      window.addEventListener('mousemove', move);
-      // remove event
-      return () => {
-        window.removeEventListener('mousemove', move);
-      };
-    } else {
-      setCursorBG('none');
-    }
-  });
+    let animationFrameId;
 
-  // cursor variants
-  const cursorVariants = {
-    default: {
-      x: cursorPos.x - 16,
-      y: cursorPos.y - 16,
-      backgroundColor: '#0e1112',
-    },
-    text: {
-      width: '150px',
-      height: '150px',
-      x: cursorPos.x - 72,
-      y: cursorPos.y - 72,
-      backgroundColor: '#fff',
-      mixBlendMode: 'difference',
-    },
-    none: {
-      width: 0,
-      height: 0,
-      backgroundColor: 'rgba(255,255,255, 1)',
-    },
-  };
+    const handleMouseMove = (e) => {
+      cancelAnimationFrame(animationFrameId);
+      animationFrameId = requestAnimationFrame(() => {
+        setPosition({ x: e.clientX, y: e.clientY });
+      });
+    };
 
-  // mouse enter handler
-  const mouseEnterHandler = () => {
-    setCursorBG('text');
-  };
-  // mouse leaver handler
-  const mouseLeaveHandler = () => {
-    setCursorBG('default');
-  };
+    window.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
+  // Cursor variants based on state
+  useEffect(() => {
+    setCursorVariants({
+      default: {
+        x: position.x - 16,
+        y: position.y - 16,
+      },
+      link: {
+        height: 48,
+        width: 48,
+        x: position.x - 24,
+        y: position.y - 24,
+        backgroundColor: '#fff',
+        mixBlendMode: 'difference',
+      },
+    });
+  }, [position]);
+
+  const mouseEnterHandler = () => setCursorBG('link');
+  const mouseLeaveHandler = () => setCursorBG('default');
 
   return (
     <CursorContext.Provider
-      value={{ cursorVariants, cursorBG, mouseEnterHandler, mouseLeaveHandler }}
+      value={{
+        cursorVariants,
+        cursorBG,
+        mouseEnterHandler,
+        mouseLeaveHandler,
+      }}
     >
       {children}
     </CursorContext.Provider>
