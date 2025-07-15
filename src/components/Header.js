@@ -1,65 +1,71 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 // import components
 import Socials from './Socials';
-import Logo from '../img/header/jack_films_logo.svg';
+import Logo from '../img/header/logo_new.png';
 import MobileNav from './MobileNav';
 // import link
 import { Link } from 'react-router-dom';
 // import cursor context
-import { CursorContext } from '../context/CursorContext';
+
 
 const Header = () => {
-  const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
+  
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Animate header on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 30);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <header className='fixed w-full px-[30px] lg:px-[100px] z-30 h-[100px] lg:h-[140px] flex items-center'>
-      <div className='flex flex-col lg:flex-row lg:items-center w-full justify-between'>
-        {/* logo */}
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 
+        ${isScrolled ? 'bg-black/50 backdrop-blur-md h-[70px]' : 'bg-black/30 backdrop-blur-sm h-[90px]'}`}
+    >
+      <div className="flex items-center justify-between w-full h-full px-6 lg:px-16">
+        {/* Logo */}
         <Link
-          onMouseEnter={mouseEnterHandler}
-          onMouseLeave={mouseLeaveHandler}
-          to={'/'}
-          className='max-w-[200px]'
+          to="/"
+          
+          className="flex-shrink-0 w-[140px] z-50"
         >
-          {/* <img src={Logo} alt='' /> */}
-          <img src={Logo} alt="Jack Films logo" />
+          <img
+            src={Logo}
+            alt="Jack Films Logo"
+            className="block w-full max-w-[140px] object-contain"
+          />
         </Link>
-        {/* nav - initially hidden - show on desktop mode */}
+
+        {/* Desktop nav */}
         <nav
-          className='hidden xl:flex gap-x-12 font-semibold'
-          onMouseEnter={mouseEnterHandler}
-          onMouseLeave={mouseLeaveHandler}
+          className="hidden xl:flex gap-x-10 font-semibold text-white"
+          
         >
-          <Link
-            to={'/'}
-            className='text-[#696c6d] hover:text-primary transition'
-          >
-            Home
-          </Link>
-          <Link
-            to={'/about'}
-            className='text-[#696c6d] hover:text-primary transition'
-          >
-            About
-          </Link>
-          <Link
-            to={'/portfolio'}
-            className='text-[#696c6d] hover:text-primary transition'
-          >
-            Porftolio
-          </Link>
-          <Link
-            to={'/contact'}
-            className='text-[#696c6d] hover:text-primary transition'
-          >
-            Contact
-          </Link>
+          <Link to="/" className="hover:text-yellow-400 transition">Home</Link>
+          <Link to="/about" className="hover:text-yellow-400 transition">About</Link>
+          <Link to="/portfolio" className="hover:text-yellow-400 transition">Portfolio</Link>
+          <Link to="/pricing" className="hover:text-yellow-400 transition">Pricing</Link>
+          <Link to="/contact" className="hover:text-yellow-400 transition">Contact</Link>
+
         </nav>
+
+        {/* Right side: socials + mobile nav */}
+        <div className="flex items-center gap-4">
+          {/* Socials always visible */}
+          <div className="hidden lg:flex text-white">
+            <Socials />
+          </div>
+
+          {/* Mobile nav */}
+          <div className="xl:hidden">
+            <MobileNav />
+          </div>
+        </div>
       </div>
-      {/* socials */}
-      <Socials />
-      {/* mobile nav */}
-      <MobileNav />
     </header>
   );
 };

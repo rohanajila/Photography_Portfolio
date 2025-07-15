@@ -1,50 +1,39 @@
 import React, { useContext } from 'react';
-// import icons
-import {
-  ImFacebook,
-  ImTwitter,
-  ImPinterest,
-  ImInstagram,
-  ImYoutube,
-} from 'react-icons/im';
-// import cursor context
-import { CursorContext } from '../context/CursorContext';
+import { FaYoutube, FaInstagram, FaFacebook } from 'react-icons/fa';
+
 
 const Socials = () => {
-  const { mouseEnterHandler, mouseLeaveHandler } = useContext(CursorContext);
+  
+
   return (
-    <div
-      onMouseEnter={mouseEnterHandler}
-      onMouseLeave={mouseLeaveHandler}
-      className='hidden xl:flex ml-24'
-    >
-      <ul className='flex gap-x-4'>
-        <li>
-          <a href='http://wwww.facebook.com' target='_blank'>
-            <ImFacebook />
-          </a>
-        </li>
-        <li>
-          <a href='http://www.twitter.com' target='_blank'>
-            <ImTwitter />
-          </a>
-        </li>
-        <li>
-          <a href='http://www.pinterest.com' target='_blank'>
-            <ImPinterest />
-          </a>
-        </li>
-        <li>
-          <a href='http://www.instagram.com' target='_blank'>
-            <ImInstagram />
-          </a>
-        </li>
-        <li>
-          <a href='http://www.youtube.com' target='_blank'>
-            <ImYoutube />
-          </a>
-        </li>
-      </ul>
+    <div className="flex items-center gap-x-6 text-white">
+      <a
+        href="https://youtube.com"
+        target="_blank"
+        rel="noreferrer"
+        
+        className="hover:text-yellow-400 transition"
+      >
+        <FaYoutube size={20} />
+      </a>
+      <a
+        href="https://instagram.com"
+        target="_blank"
+        rel="noreferrer"
+        
+        className="hover:text-yellow-400 transition"
+      >
+        <FaInstagram size={20} />
+      </a>
+      <a
+        href="https://facebook.com"
+        target="_blank"
+        rel="noreferrer"
+        
+        className="hover:text-yellow-400 transition"
+      >
+        <FaFacebook size={20} />
+      </a>
     </div>
   );
 };
