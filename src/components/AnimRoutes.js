@@ -5,6 +5,7 @@ import About from '../pages/About';
 import Portfolio from '../pages/Portfolio';
 import Contact from '../pages/Contact';
 import Pricing from '../pages/Pricing';
+import ThankYou from '../pages/Thankyou';
 
 // import routes route & useLocation hook
 import { Routes, Route, useLocation } from 'react-router-dom';
@@ -20,6 +21,7 @@ const AnimRoutes = () => {
         <Route path='/portfolio' element={<Portfolio />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/pricing' element={<Pricing />} />
+        <Route path='/thank-you' element={<ThankYou />} />
       </Routes>
     </AnimatePresence>
   );

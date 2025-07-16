@@ -30,10 +30,10 @@ const Portfolio = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="text-[40px] lg:text-[80px] leading-none mb-6 font-bold"
+          className="h1"
         >
           
-          <h1 className='h1'>Portfolio</h1>
+          Portfolio
         </motion.h1>
 
         <motion.p
