@@ -5,12 +5,8 @@ import WomanImg from '../img/contact/man.png';
 import { motion } from 'framer-motion';
 // import transition
 import { transition1 } from '../transitions';
-// import context
-
 
 const Contact = () => {
-  
-
   return (
     <motion.section
       initial={{ opacity: 0, y: '100%' }}
@@ -30,31 +26,82 @@ const Contact = () => {
             className='hidden lg:flex bg-[#eef7f9] absolute bottom-0 left-0 right-0 top-72 -z-10'
           ></motion.div>
           {/* text & form */}
-          <div
-            
-            className='lg:flex-1 lg:pt-32 px-4'
-          >
+          <div className='lg:flex-1 lg:pt-32 px-4'>
             <h1 className='h1'>Contact me</h1>
             <p className='mb-12'>I would love to get suggestions from you.</p>
             {/* form */}
-            <form className='flex flex-col gap-y-4'>
-              <div className='flex gap-x-10'>
+            <form
+              action="https://formsubmit.co/rohanajilaireland@gmail.com"
+              method="POST"
+              className='flex flex-col gap-y-4'
+            >
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_next" value="https://photography-portfolio-bice-nine.vercel.app/thank-you" />
+              <div className='flex flex-col md:flex-row gap-x-10 gap-y-4'>
                 <input
                   className='outline-none border-b border-b-primary h-[60px] bg-transparent font-secondary w-full pl-3 placeholder:text-[#757879]'
                   type='text'
-                  placeholder='Your name'
+                  name='Full Name'
+                  placeholder='Full Name'
+                  required
                 />
                 <input
                   className='outline-none border-b border-b-primary h-[60px] bg-transparent font-secondary w-full pl-3 placeholder:text-[#757879]'
-                  type='text'
-                  placeholder='Your email address'
+                  type='email'
+                  name='Email Address'
+                  placeholder='Email Address'
+                  required
                 />
               </div>
-              <input
-                className='outline-none border-b border-b-primary h-[60px] bg-transparent font-secondary w-full pl-3 placeholder:text-[#757879]'
-                type='text'
-                placeholder='Your message'
-              />
+              <div className='flex flex-col md:flex-row gap-x-10 gap-y-4'>
+                <input
+                  className='outline-none border-b border-b-primary h-[60px] bg-transparent font-secondary w-full pl-3 placeholder:text-[#757879]'
+                  type='tel'
+                  name='Phone Number'
+                  placeholder='Phone Number'
+                  required
+                />
+                <select
+                  className='outline-none border-b border-b-primary h-[60px] bg-transparent font-secondary w-full pl-3 text-[#757879]'
+                  name='Event Type'
+                  required
+                >
+                  <option value="">Select Event Type</option>
+                  <option value="Wedding">Wedding</option>
+                  <option value="Pre-wedding">Pre-wedding</option>
+                  <option value="Engagement">Engagement</option>
+                </select>
+              </div>
+              <div className='flex flex-col md:flex-row gap-x-10 gap-y-4'>
+                <input
+                  className='outline-none border-b border-b-primary h-[60px] bg-transparent font-secondary w-full pl-3 placeholder:text-[#757879]'
+                  type='date'
+                  name='Event Date'
+                  placeholder='Event Date'
+                  required
+                />
+                <input
+                  className='outline-none border-b border-b-primary h-[60px] bg-transparent font-secondary w-full pl-3 placeholder:text-[#757879]'
+                  type='text'
+                  name='Event Location'
+                  placeholder='Event Location'
+                  required
+                />
+              </div>
+              <select
+                className='outline-none border-b border-b-primary h-[60px] bg-transparent font-secondary w-full pl-3 text-[#757879]'
+                name='Interested Package'
+              >
+                <option value="">Interested Package (optional)</option>
+                <option value="Bronze">Bronze</option>
+                <option value="Silver">Silver</option>
+                <option value="Gold">Gold</option>
+              </select>
+              <textarea
+                className='outline-none border-b border-b-primary h-[100px] bg-transparent font-secondary w-full pl-3 pt-2 placeholder:text-[#757879]'
+                name='Additional Notes'
+                placeholder='Additional requirements / Questions'
+              ></textarea>
               <button className='btn mb-[30px] mx-auto lg:mx-0 self-start'>
                 Send it
               </button>
@@ -62,7 +109,6 @@ const Contact = () => {
           </div>
           {/* image */}
           <motion.div
-            
             initial={{ opacity: 0, y: '100%' }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: '100%' }}

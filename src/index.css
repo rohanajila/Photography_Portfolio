@@ -21,4 +21,10 @@
   .btn {
     @apply py-[18px] px-[50px] h-[66px] flex items-center justify-center text-base uppercase font-secondary font-semibold bg-primary text-white;
   }
+  /* Button hover animation for detail panel close button */
+  button:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+
 }
