@@ -19,6 +19,7 @@ const MobileNav = () => {
           <Link to="/" onClick={() => setIsOpen(false)} className="hover:text-yellow-400 transition">Home</Link>
           <Link to="/about" onClick={() => setIsOpen(false)} className="hover:text-yellow-400 transition">About</Link>
           <Link to="/portfolio" onClick={() => setIsOpen(false)} className="hover:text-yellow-400 transition">Portfolio</Link>
+          <Link to="/pricing" onClick={() => setIsOpen(false)} className="hover:text-yellow-400 transition">Pricing</Link>
           <Link to="/contact" onClick={() => setIsOpen(false)} className="hover:text-yellow-400 transition">Contact</Link>
         </div>
       )}
