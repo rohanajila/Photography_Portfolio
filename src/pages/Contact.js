@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 // import images
 import WomanImg from '../img/contact/man.png';
 // import motion
@@ -7,39 +7,6 @@ import { motion } from 'framer-motion';
 import { transition1 } from '../transitions';
 
 const Contact = () => {
-  const formRef = useRef(null);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const formData = new FormData(formRef.current);
-
-    const data = {
-      name: formData.get('name'),
-      email: formData.get('email'),
-      phone: formData.get('phone'),
-      eventType: formData.get('eventType'),
-      eventDate: formData.get('eventDate'),
-      eventLocation: formData.get('eventLocation'),
-      package: formData.get('package'),
-      message: formData.get('message'),
-    };
-
-    try {
-      await fetch('https://script.google.com/macros/s/AKfycbwmA1BbhpcxK5_dOiq36vsat-05s1eFVv_k8eQfw9iU9wKsWNP8rzNadv56sy7orE0/exechttps://script.google.com/macros/s/AKfycbxoenjjXn2-TH4ZobNaehwqf_1TCiQBB06wzIovM-wX4f5hrLF5-HBsUfDmv9u2Ndsf/exec', {
-        method: 'POST',
-        body: JSON.stringify(data),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-      alert('Thank you! Your message has been sent.');
-      formRef.current.reset();
-    } catch (err) {
-      console.error(err);
-      alert('Something went wrong. Please try again later.');
-    }
-  };
-
   return (
     <motion.section
       initial={{ opacity: 0, y: '100%' }}
@@ -63,7 +30,11 @@ const Contact = () => {
             <h1 className='h1'>Contact me</h1>
             <p className='mb-12'>I would love to get suggestions from you.</p>
             {/* form */}
-            <form ref={formRef} onSubmit={handleSubmit} className='flex flex-col gap-y-4'>
+            <form
+              action='https://script.google.com/macros/s/AKfycbyaWPM1e8Mt7krVcq723Pvx6ZUM1Odq88lsfk58ar7AjOc1vodhaqqZl0FGO__flPzJ/exec'
+              method='POST'
+              className='flex flex-col gap-y-4'
+            >
               <div className='flex flex-col md:flex-row gap-x-10 gap-y-4'>
                 <input
                   name='name'
@@ -104,7 +75,6 @@ const Contact = () => {
                   name='eventDate'
                   className='outline-none border-b border-b-primary h-[60px] bg-transparent font-secondary w-full pl-3 placeholder:text-[#757879]'
                   type='date'
-                  placeholder='Event Date'
                   required
                 />
                 <input
@@ -129,6 +99,7 @@ const Contact = () => {
                 className='outline-none border-b border-b-primary h-[100px] bg-transparent font-secondary w-full pl-3 pt-2 placeholder:text-[#757879]'
                 placeholder='Additional requirements / Questions'
               ></textarea>
+              <input type='hidden' name='_redirect' value='https://photography-portfolio-bice-nine.vercel.app/thank-you' />
               <button className='btn mb-[30px] mx-auto lg:mx-0 self-start'>
                 Send it
               </button>
