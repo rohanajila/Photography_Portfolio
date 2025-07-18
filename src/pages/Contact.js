@@ -27,7 +27,7 @@ const Contact = () => {
             <p className='mb-12'>I would love to get suggestions from you.</p>
 
             <form
-              action="https://script.google.com/macros/s/AKfycbyI-2A9bSVVDC2n51Re3KUp5tpN2yKDYvO0yokDMGL8f8PGwdiR-OazyrZ2NeOAp65u/exec"
+              action="https://script.google.com/macros/s/AKfycbwriSNOfE303xb-i7e6ZWQpX_EbWHj24g-qehoxKwlzEB64rHEEM4BRrNKSj-_xvVLL/exec"
               method="POST"
               className='flex flex-col gap-y-4'
             >
