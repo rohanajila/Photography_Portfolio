@@ -23,18 +23,18 @@ const Contact = () => {
     e.preventDefault();
     try {
       const response = await fetch(
-        'https://script.google.com/macros/s/AKfycbxNVG1yq0HFXfU8o3QwkHJKzqZujX6HfX7bP1vLrFrChprXK8W3LUE6Y7EE0DDWGbLX/exec',
+        'https://script.google.com/macros/s/AKfycbyI-2A9bSVVDC2n51Re3KUp5tpN2yKDYvO0yokDMGL8f8PGwdiR-OazyrZ2NeOAp65u/exec',
         {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify(formData),
+          body: JSON.stringify(formData)
         }
       );
       const result = await response.json();
-      if (result.result === 'success') {
-        window.location.href = 'https://photography-portfolio-bice-nine.vercel.app/thank-you';
+      if (result.result === 'success' && result.redirect) {
+        window.location.href = result.redirect;
       }
     } catch (error) {
       console.error('Error:', error);
