@@ -4,6 +4,27 @@ import { motion } from 'framer-motion';
 import { transition1 } from '../transitions';
 
 const Contact = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
+
+    fetch("https://script.google.com/macros/s/AKfycbwriSNOfE303xb-i7e6ZWQpX_EbWHj24g-qehoxKwlzEB64rHEEM4BRrNKSj-_xvVLL/exec", {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => {
+        if (response.ok) {
+          window.location.href = "https://photography-portfolio-bice-nine.vercel.app/thank-you";
+        } else {
+          alert("Submission failed. Please try again.");
+        }
+      })
+      .catch(() => {
+        alert("There was an error connecting to the server.");
+      });
+  };
+
   return (
     <motion.section
       initial={{ opacity: 0, y: '100%' }}
@@ -26,13 +47,7 @@ const Contact = () => {
             <h1 className='h1'>Contact me</h1>
             <p className='mb-12'>I would love to get suggestions from you.</p>
 
-            <form
-              action="https://script.google.com/macros/s/AKfycbwriSNOfE303xb-i7e6ZWQpX_EbWHj24g-qehoxKwlzEB64rHEEM4BRrNKSj-_xvVLL/exec"
-              method="POST"
-              className='flex flex-col gap-y-4'
-            >
-              <input type="hidden" name="_redirect" value="https://photography-portfolio-bice-nine.vercel.app/thank-you" />
-
+            <form onSubmit={handleSubmit} className='flex flex-col gap-y-4'>
               <div className='flex flex-col md:flex-row gap-x-10 gap-y-4'>
                 <input name='name' className='outline-none border-b border-b-primary h-[60px] bg-transparent font-secondary w-full pl-3 placeholder:text-[#757879]' type='text' placeholder='Full Name' required />
                 <input name='email' className='outline-none border-b border-b-primary h-[60px] bg-transparent font-secondary w-full pl-3 placeholder:text-[#757879]' type='email' placeholder='Email Address' required />
