@@ -4,10 +4,42 @@ import { motion } from 'framer-motion';
 import { transition1 } from '../transitions';
 
 const Contact = () => {
+  const validateForm = (formData) => {
+    const nameRegex = /^[A-Za-z\s]+$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phoneRegex = /^\d{10}$/;
+    const locationRegex = /^[A-Za-z\s]+$/;
+
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const phone = formData.get('phone');
+    const eventLocation = formData.get('eventLocation');
+
+    if (!nameRegex.test(name)) {
+      alert('Please enter a valid name without numbers.');
+      return false;
+    }
+    if (!emailRegex.test(email)) {
+      alert('Please enter a valid email address.');
+      return false;
+    }
+    if (!phoneRegex.test(phone)) {
+      alert('Phone number must be exactly 10 digits and contain only numbers.');
+      return false;
+    }
+    if (!locationRegex.test(eventLocation)) {
+      alert('Event location should only contain letters and spaces.');
+      return false;
+    }
+    return true;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
+
+    if (!validateForm(formData)) return;
 
     fetch("https://script.google.com/macros/s/AKfycbwriSNOfE303xb-i7e6ZWQpX_EbWHj24g-qehoxKwlzEB64rHEEM4BRrNKSj-_xvVLL/exec", {
       method: "POST",
